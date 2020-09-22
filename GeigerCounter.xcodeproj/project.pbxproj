@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A994D48C251A8CFD00F98A7F /* GeigerCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D48B251A8CFD00F98A7F /* GeigerCounterApp.swift */; };
+		A994D48E251A8CFD00F98A7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D48D251A8CFD00F98A7F /* ContentView.swift */; };
+		A994D490251A8D0000F98A7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A994D48F251A8D0000F98A7F /* Assets.xcassets */; };
+		A994D493251A8D0000F98A7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A994D492251A8D0000F98A7F /* Preview Assets.xcassets */; };
+		A994D49E251A8D0100F98A7F /* GeigerCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D49D251A8D0100F98A7F /* GeigerCounterTests.swift */; };
+		A994D4A9251A8D0100F98A7F /* GeigerCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D4A8251A8D0100F98A7F /* GeigerCounterUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A994D49A251A8D0100F98A7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A994D480251A8CFD00F98A7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A994D487251A8CFD00F98A7F;
+			remoteInfo = GeigerCounter;
+		};
+		A994D4A5251A8D0100F98A7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A994D480251A8CFD00F98A7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A994D487251A8CFD00F98A7F;
+			remoteInfo = GeigerCounter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A994D488251A8CFD00F98A7F /* GeigerCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeigerCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A994D48B251A8CFD00F98A7F /* GeigerCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeigerCounterApp.swift; sourceTree = "<group>"; };
+		A994D48D251A8CFD00F98A7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A994D48F251A8D0000F98A7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A994D492251A8D0000F98A7F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A994D494251A8D0000F98A7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A994D499251A8D0100F98A7F /* GeigerCounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeigerCounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A994D49D251A8D0100F98A7F /* GeigerCounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeigerCounterTests.swift; sourceTree = "<group>"; };
+		A994D49F251A8D0100F98A7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A994D4A4251A8D0100F98A7F /* GeigerCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeigerCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A994D4A8251A8D0100F98A7F /* GeigerCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeigerCounterUITests.swift; sourceTree = "<group>"; };
+		A994D4AA251A8D0100F98A7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A994D485251A8CFD00F98A7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A994D496251A8D0100F98A7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A994D4A1251A8D0100F98A7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A994D47F251A8CFD00F98A7F = {
+			isa = PBXGroup;
+			children = (
+				A994D48A251A8CFD00F98A7F /* GeigerCounter */,
+				A994D49C251A8D0100F98A7F /* GeigerCounterTests */,
+				A994D4A7251A8D0100F98A7F /* GeigerCounterUITests */,
+				A994D489251A8CFD00F98A7F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A994D489251A8CFD00F98A7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A994D488251A8CFD00F98A7F /* GeigerCounter.app */,
+				A994D499251A8D0100F98A7F /* GeigerCounterTests.xctest */,
+				A994D4A4251A8D0100F98A7F /* GeigerCounterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A994D48A251A8CFD00F98A7F /* GeigerCounter */ = {
+			isa = PBXGroup;
+			children = (
+				A994D48B251A8CFD00F98A7F /* GeigerCounterApp.swift */,
+				A994D48D251A8CFD00F98A7F /* ContentView.swift */,
+				A994D48F251A8D0000F98A7F /* Assets.xcassets */,
+				A994D494251A8D0000F98A7F /* Info.plist */,
+				A994D491251A8D0000F98A7F /* Preview Content */,
+			);
+			path = GeigerCounter;
+			sourceTree = "<group>";
+		};
+		A994D491251A8D0000F98A7F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A994D492251A8D0000F98A7F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A994D49C251A8D0100F98A7F /* GeigerCounterTests */ = {
+			isa = PBXGroup;
+			children = (
+				A994D49D251A8D0100F98A7F /* GeigerCounterTests.swift */,
+				A994D49F251A8D0100F98A7F /* Info.plist */,
+			);
+			path = GeigerCounterTests;
+			sourceTree = "<group>";
+		};
+		A994D4A7251A8D0100F98A7F /* GeigerCounterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A994D4A8251A8D0100F98A7F /* GeigerCounterUITests.swift */,
+				A994D4AA251A8D0100F98A7F /* Info.plist */,
+			);
+			path = GeigerCounterUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A994D487251A8CFD00F98A7F /* GeigerCounter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A994D4AD251A8D0100F98A7F /* Build configuration list for PBXNativeTarget "GeigerCounter" */;
+			buildPhases = (
+				A994D484251A8CFD00F98A7F /* Sources */,
+				A994D485251A8CFD00F98A7F /* Frameworks */,
+				A994D486251A8CFD00F98A7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GeigerCounter;
+			productName = GeigerCounter;
+			productReference = A994D488251A8CFD00F98A7F /* GeigerCounter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A994D498251A8D0100F98A7F /* GeigerCounterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A994D4B0251A8D0100F98A7F /* Build configuration list for PBXNativeTarget "GeigerCounterTests" */;
+			buildPhases = (
+				A994D495251A8D0100F98A7F /* Sources */,
+				A994D496251A8D0100F98A7F /* Frameworks */,
+				A994D497251A8D0100F98A7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A994D49B251A8D0100F98A7F /* PBXTargetDependency */,
+			);
+			name = GeigerCounterTests;
+			productName = GeigerCounterTests;
+			productReference = A994D499251A8D0100F98A7F /* GeigerCounterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A994D4A3251A8D0100F98A7F /* GeigerCounterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A994D4B3251A8D0100F98A7F /* Build configuration list for PBXNativeTarget "GeigerCounterUITests" */;
+			buildPhases = (
+				A994D4A0251A8D0100F98A7F /* Sources */,
+				A994D4A1251A8D0100F98A7F /* Frameworks */,
+				A994D4A2251A8D0100F98A7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A994D4A6251A8D0100F98A7F /* PBXTargetDependency */,
+			);
+			name = GeigerCounterUITests;
+			productName = GeigerCounterUITests;
+			productReference = A994D4A4251A8D0100F98A7F /* GeigerCounterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A994D480251A8CFD00F98A7F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					A994D487251A8CFD00F98A7F = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					A994D498251A8D0100F98A7F = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = A994D487251A8CFD00F98A7F;
+					};
+					A994D4A3251A8D0100F98A7F = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = A994D487251A8CFD00F98A7F;
+					};
+				};
+			};
+			buildConfigurationList = A994D483251A8CFD00F98A7F /* Build configuration list for PBXProject "GeigerCounter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A994D47F251A8CFD00F98A7F;
+			productRefGroup = A994D489251A8CFD00F98A7F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A994D487251A8CFD00F98A7F /* GeigerCounter */,
+				A994D498251A8D0100F98A7F /* GeigerCounterTests */,
+				A994D4A3251A8D0100F98A7F /* GeigerCounterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A994D486251A8CFD00F98A7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A994D493251A8D0000F98A7F /* Preview Assets.xcassets in Resources */,
+				A994D490251A8D0000F98A7F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A994D497251A8D0100F98A7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A994D4A2251A8D0100F98A7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A994D484251A8CFD00F98A7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A994D48E251A8CFD00F98A7F /* ContentView.swift in Sources */,
+				A994D48C251A8CFD00F98A7F /* GeigerCounterApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A994D495251A8D0100F98A7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A994D49E251A8D0100F98A7F /* GeigerCounterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A994D4A0251A8D0100F98A7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A994D4A9251A8D0100F98A7F /* GeigerCounterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A994D49B251A8D0100F98A7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A994D487251A8CFD00F98A7F /* GeigerCounter */;
+			targetProxy = A994D49A251A8D0100F98A7F /* PBXContainerItemProxy */;
+		};
+		A994D4A6251A8D0100F98A7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A994D487251A8CFD00F98A7F /* GeigerCounter */;
+			targetProxy = A994D4A5251A8D0100F98A7F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A994D4AB251A8D0100F98A7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A994D4AC251A8D0100F98A7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A994D4AE251A8D0100F98A7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"GeigerCounter/Preview Content\"";
+				DEVELOPMENT_TEAM = UPHPGSVHXK;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = GeigerCounter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.uulm.mc17.GeigerCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A994D4AF251A8D0100F98A7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"GeigerCounter/Preview Content\"";
+				DEVELOPMENT_TEAM = UPHPGSVHXK;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = GeigerCounter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.uulm.mc17.GeigerCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A994D4B1251A8D0100F98A7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UPHPGSVHXK;
+				INFOPLIST_FILE = GeigerCounterTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.uulm.mc17.GeigerCounterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeigerCounter.app/GeigerCounter";
+			};
+			name = Debug;
+		};
+		A994D4B2251A8D0100F98A7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UPHPGSVHXK;
+				INFOPLIST_FILE = GeigerCounterTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.uulm.mc17.GeigerCounterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeigerCounter.app/GeigerCounter";
+			};
+			name = Release;
+		};
+		A994D4B4251A8D0100F98A7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UPHPGSVHXK;
+				INFOPLIST_FILE = GeigerCounterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.uulm.mc17.GeigerCounterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GeigerCounter;
+			};
+			name = Debug;
+		};
+		A994D4B5251A8D0100F98A7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UPHPGSVHXK;
+				INFOPLIST_FILE = GeigerCounterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.uulm.mc17.GeigerCounterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GeigerCounter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A994D483251A8CFD00F98A7F /* Build configuration list for PBXProject "GeigerCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A994D4AB251A8D0100F98A7F /* Debug */,
+				A994D4AC251A8D0100F98A7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A994D4AD251A8D0100F98A7F /* Build configuration list for PBXNativeTarget "GeigerCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A994D4AE251A8D0100F98A7F /* Debug */,
+				A994D4AF251A8D0100F98A7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A994D4B0251A8D0100F98A7F /* Build configuration list for PBXNativeTarget "GeigerCounterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A994D4B1251A8D0100F98A7F /* Debug */,
+				A994D4B2251A8D0100F98A7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A994D4B3251A8D0100F98A7F /* Build configuration list for PBXNativeTarget "GeigerCounterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A994D4B4251A8D0100F98A7F /* Debug */,
+				A994D4B5251A8D0100F98A7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A994D480251A8CFD00F98A7F /* Project object */;
+}
