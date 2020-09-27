@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A90F409E2520F0400066433E /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F409D2520F0400066433E /* DevicesView.swift */; };
+		A90F40A32520F6EB0066433E /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F40A22520F6EB0066433E /* DeviceList.swift */; };
+		A90F40A82520F9860066433E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A90F40A72520F9860066433E /* .gitignore */; };
 		A994D48C251A8CFD00F98A7F /* GeigerCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D48B251A8CFD00F98A7F /* GeigerCounterApp.swift */; };
 		A994D48E251A8CFD00F98A7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D48D251A8CFD00F98A7F /* ContentView.swift */; };
 		A994D490251A8D0000F98A7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A994D48F251A8D0000F98A7F /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A90F409D2520F0400066433E /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
+		A90F40A22520F6EB0066433E /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
+		A90F40A72520F9860066433E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A994D488251A8CFD00F98A7F /* GeigerCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeigerCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A994D48B251A8CFD00F98A7F /* GeigerCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeigerCounterApp.swift; sourceTree = "<group>"; };
 		A994D48D251A8CFD00F98A7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +81,7 @@
 		A994D47F251A8CFD00F98A7F = {
 			isa = PBXGroup;
 			children = (
+				A90F40A72520F9860066433E /* .gitignore */,
 				A994D48A251A8CFD00F98A7F /* GeigerCounter */,
 				A994D49C251A8D0100F98A7F /* GeigerCounterTests */,
 				A994D4A7251A8D0100F98A7F /* GeigerCounterUITests */,
@@ -96,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				A994D48B251A8CFD00F98A7F /* GeigerCounterApp.swift */,
+				A90F409D2520F0400066433E /* DevicesView.swift */,
+				A90F40A22520F6EB0066433E /* DeviceList.swift */,
 				A994D48D251A8CFD00F98A7F /* ContentView.swift */,
 				A994D48F251A8D0000F98A7F /* Assets.xcassets */,
 				A994D494251A8D0000F98A7F /* Info.plist */,
@@ -234,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A994D493251A8D0000F98A7F /* Preview Assets.xcassets in Resources */,
+				A90F40A82520F9860066433E /* .gitignore in Resources */,
 				A994D490251A8D0000F98A7F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A90F409E2520F0400066433E /* DevicesView.swift in Sources */,
 				A994D48E251A8CFD00F98A7F /* ContentView.swift in Sources */,
 				A994D48C251A8CFD00F98A7F /* GeigerCounterApp.swift in Sources */,
+				A90F40A32520F6EB0066433E /* DeviceList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
