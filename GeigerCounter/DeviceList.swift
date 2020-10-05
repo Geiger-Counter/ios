@@ -11,11 +11,57 @@ import SwiftUI
 struct DeviceList : View {
     
     var devices : [Device]
+    @State private var selected = false
+    
+    init(devices : [Device]) {
+        self.devices = devices
+    }
+    
+    func connect() {
+        print("Connect")
+    }
+    
+    func select(device : Device) -> () -> () {
+        return {
+            print("Selected device: ", device.name)
+        }
+    }
+    
+    var button_color : Color {
+        return selected ? Color.green : Color.gray
+    }
     
     var body : some View {
-        List(devices, id: \.name) { device in
-            DeviceView(device: device)
+        VStack {
+            RotatingLogo(duration: 8)
+            Text("Available Devices")
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .font(.title)
+            List(devices, id: \.name) { device in
+                Button(action: self.select(device: device)){
+                    DeviceView(
+                        device: device
+                    )
+                }
+                .disabled(!device.valid)
+                .padding([.leading, .trailing], 0)
+            }
+            Button(action: connect){
+                HStack{
+                    Image(systemName: "link")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    Text("Connect")
+                        .fontWeight(.semibold)
+                        .font(.title)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding()
+                .foregroundColor(.white)
+                .background(button_color)
+            }
+            .disabled(!selected)
         }
+        .frame(minWidth: 0, maxWidth: .infinity)
     }
     
 }

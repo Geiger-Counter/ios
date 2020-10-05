@@ -10,12 +10,15 @@
 		A90F409E2520F0400066433E /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F409D2520F0400066433E /* DevicesView.swift */; };
 		A90F40A32520F6EB0066433E /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F40A22520F6EB0066433E /* DeviceList.swift */; };
 		A90F40A82520F9860066433E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A90F40A72520F9860066433E /* .gitignore */; };
+		A90F40AD2521203F0066433E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F40AC2521203F0066433E /* SearchView.swift */; };
 		A994D48C251A8CFD00F98A7F /* GeigerCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D48B251A8CFD00F98A7F /* GeigerCounterApp.swift */; };
 		A994D48E251A8CFD00F98A7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D48D251A8CFD00F98A7F /* ContentView.swift */; };
 		A994D490251A8D0000F98A7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A994D48F251A8D0000F98A7F /* Assets.xcassets */; };
 		A994D493251A8D0000F98A7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A994D492251A8D0000F98A7F /* Preview Assets.xcassets */; };
 		A994D49E251A8D0100F98A7F /* GeigerCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D49D251A8D0100F98A7F /* GeigerCounterTests.swift */; };
 		A994D4A9251A8D0100F98A7F /* GeigerCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D4A8251A8D0100F98A7F /* GeigerCounterUITests.swift */; };
+		A9EF051C252B50CA007C9BC0 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF051B252B50CA007C9BC0 /* DeviceInfo.swift */; };
+		A9EF0521252B5431007C9BC0 /* RotatingLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF0520252B5431007C9BC0 /* RotatingLogo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,7 @@
 		A90F409D2520F0400066433E /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
 		A90F40A22520F6EB0066433E /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
 		A90F40A72520F9860066433E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A90F40AC2521203F0066433E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		A994D488251A8CFD00F98A7F /* GeigerCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeigerCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A994D48B251A8CFD00F98A7F /* GeigerCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeigerCounterApp.swift; sourceTree = "<group>"; };
 		A994D48D251A8CFD00F98A7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		A994D4A4251A8D0100F98A7F /* GeigerCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeigerCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A994D4A8251A8D0100F98A7F /* GeigerCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeigerCounterUITests.swift; sourceTree = "<group>"; };
 		A994D4AA251A8D0100F98A7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9EF051B252B50CA007C9BC0 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		A9EF0520252B5431007C9BC0 /* RotatingLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingLogo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +110,10 @@
 			children = (
 				A994D48B251A8CFD00F98A7F /* GeigerCounterApp.swift */,
 				A90F409D2520F0400066433E /* DevicesView.swift */,
+				A90F40AC2521203F0066433E /* SearchView.swift */,
 				A90F40A22520F6EB0066433E /* DeviceList.swift */,
+				A9EF0520252B5431007C9BC0 /* RotatingLogo.swift */,
+				A9EF051B252B50CA007C9BC0 /* DeviceInfo.swift */,
 				A994D48D251A8CFD00F98A7F /* ContentView.swift */,
 				A994D48F251A8D0000F98A7F /* Assets.xcassets */,
 				A994D494251A8D0000F98A7F /* Info.plist */,
@@ -269,6 +278,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A90F40AD2521203F0066433E /* SearchView.swift in Sources */,
+				A9EF051C252B50CA007C9BC0 /* DeviceInfo.swift in Sources */,
+				A9EF0521252B5431007C9BC0 /* RotatingLogo.swift in Sources */,
 				A90F409E2520F0400066433E /* DevicesView.swift in Sources */,
 				A994D48E251A8CFD00F98A7F /* ContentView.swift in Sources */,
 				A994D48C251A8CFD00F98A7F /* GeigerCounterApp.swift in Sources */,

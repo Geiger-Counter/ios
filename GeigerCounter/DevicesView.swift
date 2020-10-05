@@ -8,9 +8,11 @@
 import Foundation
 import SwiftUI
 
-struct Device {
+struct Device : Hashable {
+    let id = UUID()
     var name : String
     var valid : Bool
+    var selected : Bool = false
 }
 
 struct ValidationIndicator : View {
@@ -20,7 +22,9 @@ struct ValidationIndicator : View {
     var body : some View {
         HStack {
             Text(valid ? "compatible" : "incompatible").foregroundColor(valid ? Color.green : Color.red).font(.system(size: 13))
-            Image(valid ? "CheckIcon" : "CrossIcon").resizable().frame(width: 15, height: 15, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            Image(systemName: valid ? "checkmark.circle" : "xmark.circle").resizable()
+                .frame(width: 15, height: 15, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .foregroundColor(valid ? Color.green : Color.red)
         }
     }
     
@@ -31,9 +35,13 @@ struct DeviceView : View {
     var device : Device
     
     var body : some View {
-        HStack {
+        HStack (spacing: 4) {
+            Image(systemName: "desktopcomputer")
+                .foregroundColor(device.valid ? .blue : .gray)
             Text(device.name)
-            ValidationIndicator(valid: device.valid).frame(width: 150, height: 50, alignment: .trailing)
+                .foregroundColor(device.valid ? .blue : .gray)
+            Spacer()
+            ValidationIndicator(valid: device.valid)
         }
     }
     
