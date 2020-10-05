@@ -12,7 +12,6 @@ struct Device : Hashable {
     let id = UUID()
     var name : String
     var valid : Bool
-    var selected : Bool = false
 }
 
 struct ValidationIndicator : View {
@@ -33,6 +32,7 @@ struct ValidationIndicator : View {
 struct DeviceView : View {
     
     var device : Device
+    var selected : Bool
     
     var body : some View {
         HStack (spacing: 4) {
@@ -43,6 +43,11 @@ struct DeviceView : View {
             Spacer()
             ValidationIndicator(valid: device.valid)
         }
+        .padding()
+        .overlay(
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(Color.blue, lineWidth: selected ? 1 : 0)
+        )
     }
     
 }
@@ -53,7 +58,8 @@ struct DeviceView_Previews: PreviewProvider {
             DeviceView(device: Device(
                     name: "Arduino",
                     valid: false
-                )
+                ),
+                selected: false
             )
         }
     }

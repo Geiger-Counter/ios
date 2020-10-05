@@ -11,7 +11,7 @@ import SwiftUI
 struct DeviceList : View {
     
     var devices : [Device]
-    @State private var selected = false
+    @State private var selected_device : String = ""
     
     init(devices : [Device]) {
         self.devices = devices
@@ -23,8 +23,12 @@ struct DeviceList : View {
     
     func select(device : Device) -> () -> () {
         return {
-            print("Selected device: ", device.name)
+            selected_device = device.name
         }
+    }
+    
+    var selected : Bool {
+        return selected_device != ""
     }
     
     var button_color : Color {
@@ -40,7 +44,8 @@ struct DeviceList : View {
             List(devices, id: \.name) { device in
                 Button(action: self.select(device: device)){
                     DeviceView(
-                        device: device
+                        device: device,
+                        selected: device.name == selected_device
                     )
                 }
                 .disabled(!device.valid)
