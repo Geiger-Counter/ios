@@ -11,12 +11,14 @@ struct SplashView : View {
     
     @State var active : Bool = false
     
-    
+    func load_devices() -> some View {
+        return Text("")
+    }
     
     var body : some View {
         VStack {
             if self.active {
-                Text("HomeView")
+                self.load_devices()
             } else {
                 Image("Radioactivity")
                     .resizable()

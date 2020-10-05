@@ -7,18 +7,19 @@
 
 import Foundation
 import SwiftUI
+import CoreBluetooth
 
 struct DeviceList : View {
     
-    var devices : [Device]
+    @ObservedObject var ble_handler = BLEHandler()
     @State private var selected_device : String = ""
     
-    init(devices : [Device]) {
-        self.devices = devices
-    }
-    
     func connect() {
-        print("Connect")
+        let device = ble_handler.peripherals.filter {(peripheral : Device) -> Bool in
+            return self.selected_device == peripheral.name
+        }
+        ble_handler.connect(device: device[0])
+        // TODO: wait for connection
     }
     
     func select(device : Device) -> () -> () {
@@ -41,7 +42,7 @@ struct DeviceList : View {
             Text("Available Devices")
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .font(.title)
-            List(devices, id: \.name) { device in
+            List(ble_handler.peripherals, id: \.name) { device in
                 Button(action: self.select(device: device)){
                     DeviceView(
                         device: device,
@@ -73,9 +74,6 @@ struct DeviceList : View {
 
 struct DeviceList_Previews: PreviewProvider {
     static var previews: some View {
-        DeviceList(devices: [
-            Device(name: "Arduino", valid: false),
-            Device(name: "GeigerCounter", valid: true)
-        ])
+        DeviceList()
     }
 }

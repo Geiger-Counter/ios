@@ -15,10 +15,12 @@
 		A994D493251A8D0000F98A7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A994D492251A8D0000F98A7F /* Preview Assets.xcassets */; };
 		A994D49E251A8D0100F98A7F /* GeigerCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D49D251A8D0100F98A7F /* GeigerCounterTests.swift */; };
 		A994D4A9251A8D0100F98A7F /* GeigerCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D4A8251A8D0100F98A7F /* GeigerCounterUITests.swift */; };
-		A9EF051C252B50CA007C9BC0 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF051B252B50CA007C9BC0 /* DeviceInfo.swift */; };
 		A9EF0521252B5431007C9BC0 /* RotatingLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF0520252B5431007C9BC0 /* RotatingLogo.swift */; };
 		A9EF0526252B6DD4007C9BC0 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF0525252B6DD4007C9BC0 /* SplashView.swift */; };
 		A9EF052F252B71CB007C9BC0 /* kremlin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9EF052E252B71CB007C9BC0 /* kremlin.ttf */; };
+		A9EF053A252B8ACA007C9BC0 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF0539252B8ACA007C9BC0 /* DeviceInfo.swift */; };
+		A9EF053F252B8EBC007C9BC0 /* BLEHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF053E252B8EBC007C9BC0 /* BLEHandler.swift */; };
+		A9EF0544252B96F4007C9BC0 /* DeviceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF0543252B96F4007C9BC0 /* DeviceHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +55,12 @@
 		A994D4A4251A8D0100F98A7F /* GeigerCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeigerCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A994D4A8251A8D0100F98A7F /* GeigerCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeigerCounterUITests.swift; sourceTree = "<group>"; };
 		A994D4AA251A8D0100F98A7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9EF051B252B50CA007C9BC0 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		A9EF0520252B5431007C9BC0 /* RotatingLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingLogo.swift; sourceTree = "<group>"; };
 		A9EF0525252B6DD4007C9BC0 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		A9EF052E252B71CB007C9BC0 /* kremlin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kremlin.ttf; sourceTree = "<group>"; };
+		A9EF0539252B8ACA007C9BC0 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		A9EF053E252B8EBC007C9BC0 /* BLEHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEHandler.swift; sourceTree = "<group>"; };
+		A9EF0543252B96F4007C9BC0 /* DeviceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +116,11 @@
 				A994D48B251A8CFD00F98A7F /* GeigerCounterApp.swift */,
 				A90F409D2520F0400066433E /* DevicesView.swift */,
 				A90F40A22520F6EB0066433E /* DeviceList.swift */,
+				A9EF0543252B96F4007C9BC0 /* DeviceHandler.swift */,
+				A9EF0539252B8ACA007C9BC0 /* DeviceInfo.swift */,
 				A9EF0520252B5431007C9BC0 /* RotatingLogo.swift */,
 				A9EF0525252B6DD4007C9BC0 /* SplashView.swift */,
-				A9EF051B252B50CA007C9BC0 /* DeviceInfo.swift */,
+				A9EF053E252B8EBC007C9BC0 /* BLEHandler.swift */,
 				A994D48F251A8D0000F98A7F /* Assets.xcassets */,
 				A994D494251A8D0000F98A7F /* Info.plist */,
 				A994D491251A8D0000F98A7F /* Preview Content */,
@@ -287,9 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9EF051C252B50CA007C9BC0 /* DeviceInfo.swift in Sources */,
 				A9EF0521252B5431007C9BC0 /* RotatingLogo.swift in Sources */,
+				A9EF053A252B8ACA007C9BC0 /* DeviceInfo.swift in Sources */,
 				A90F409E2520F0400066433E /* DevicesView.swift in Sources */,
+				A9EF053F252B8EBC007C9BC0 /* BLEHandler.swift in Sources */,
+				A9EF0544252B96F4007C9BC0 /* DeviceHandler.swift in Sources */,
 				A9EF0526252B6DD4007C9BC0 /* SplashView.swift in Sources */,
 				A994D48C251A8CFD00F98A7F /* GeigerCounterApp.swift in Sources */,
 				A90F40A32520F6EB0066433E /* DeviceList.swift in Sources */,
