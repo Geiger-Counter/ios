@@ -61,6 +61,6 @@ struct DeviceInfo : View {
 
 struct DeviceInfo_Previews: PreviewProvider {
     static var previews: some View {
-        DeviceInfo(device: Device(name: "GeigerCounter", valid: true))
+        DeviceInfo(device: Device(name: "GeigerCounter"))
     }
 }
