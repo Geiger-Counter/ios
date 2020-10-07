@@ -11,6 +11,11 @@ struct DeviceInfo : View {
     
     var device : Device
     var values : DeviceValues
+    var blinking : Bool
+    
+    var blink : Animation {
+        Animation.linear(duration: 1)
+    }
     
     func show_settings() {
         
@@ -51,10 +56,45 @@ struct DeviceInfo : View {
                 }
             }
             .padding()
-            VStack (alignment: .trailing) {
-                Text(device.name)
-                Text("CPM: " + String(values.cpm))
-                Text("mSv/h: " + String(values.msvh))
+            VStack (alignment: .leading) {
+                Text("Device")
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .font(.title)
+                Spacer()
+                    .frame(height: 15)
+                HStack {
+                    Image(systemName: "desktopcomputer")
+                    Text(device.name)
+                    Spacer()
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundColor(.green)
+                    Text("online")
+                }
+                Spacer()
+                    .frame(height: 15)
+                Text("Statistics")
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .font(.title)
+                Spacer()
+                    .frame(height: 15)
+                HStack {
+                    Image(systemName: "dot.radiowaves.left.and.right")
+                    Text("CPM")
+                    Image(systemName: "xmark.circle.fill")
+                        .animation(blink)
+                        .foregroundColor(.red)
+                        .opacity(blinking ? 1 : 0)
+                    Spacer()
+                    Text(String(values.cpm))
+                }
+                
+                HStack {
+                    Image(systemName: "dot.radiowaves.right")
+                    Text("mSv/h")
+                    Spacer()
+                    Text(String(format: "%.2f", values.msvh))
+                }
+                Spacer()
             }
             .padding()
             Spacer()
@@ -79,6 +119,6 @@ struct DeviceInfo : View {
 
 struct DeviceInfo_Previews: PreviewProvider {
     static var previews: some View {
-        DeviceInfo(device: Device(name: "GeigerCounter"), values: DeviceValues(cpm: 0, msvh: 0.0))
+        DeviceInfo(device: Device(name: "GeigerCounter"), values: DeviceValues(cpm: 0, msvh: 0.0), blinking: false)
     }
 }

@@ -21,8 +21,6 @@ struct BLEUUID {
   static let SETTINGS_SSID_DEC_UUID : String = "d2b60679-7a12-4897-acf6-91975cf39721"
   static let SETTINGS_PASSWORD_CHAR_UUID : String = "61e5e86c-1812-4025-af0d-6575b3eebd44"
   static let SETTINGS_PASSWORD_DEC_UUID : String = "1f86e908-3b3f-4c9f-9cb4-70a7cd282c9e"
-  static let SETTINGS_AUDITITVE_CHAR_UUID : String = "235071e2-9ae3-4037-8f3e-29611593036d"
-  static let SETTINGS_AUDITIVE_DEC_UUID : String = "7b67b7b2-9188-4afc-99f9-857ec299768a"
   static let SETTINGS_ENDPOINT_CHAR_UUID : String = "1f732276-49c6-4637-b12d-d3bff3249dcc"
   static let SETTINGS_ENDPOINT_DEC_UUID : String = "a375f2fa-d3f2-4231-913b-dd0c8960efe1"
   static let SETTINGS_USERNAME_CHAR_UUID : String = "27929fb9-4b99-4542-a052-d7fcea739e56"
@@ -39,6 +37,7 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     @Published var device : CBPeripheral!
     @Published var connected : Bool = false
     @Published var values : DeviceValues = DeviceValues(cpm: 0, msvh: 0.0)
+    @Published var impulse : Bool = false
     
     override init() {
         super.init()
@@ -127,6 +126,7 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
                 values.msvh = dataToFloat(value)
             case BLEUUID.DATA_IMPULSE_CHAR_UUID.uppercased():
                 print("Impulse")
+                do_blink()
             default: return
         }
     }
@@ -149,5 +149,12 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         str.append(Character(UnicodeScalar(data[i])))
       }
       return str
+    }
+    
+    func do_blink () {
+        self.impulse = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            self.impulse = false
+        }
     }
 }
