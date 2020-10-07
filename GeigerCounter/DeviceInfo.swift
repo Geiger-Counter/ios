@@ -10,6 +10,7 @@ import SwiftUI
 struct DeviceInfo : View {
     
     var device : Device
+    var values : DeviceValues
     
     func show_settings() {
         
@@ -17,6 +18,10 @@ struct DeviceInfo : View {
     
     func show_camera() {
         
+    }
+    
+    func disconnect() {
+        print("disconnect")
     }
     
     var body : some View {
@@ -48,11 +53,24 @@ struct DeviceInfo : View {
             .padding()
             VStack (alignment: .trailing) {
                 Text(device.name)
-                
+                Text("CPM: " + String(values.cpm))
+                Text("mSv/h: " + String(values.msvh))
             }
             .padding()
             Spacer()
-            
+            Button(action: disconnect){
+                HStack{
+                    Image(systemName: "xmark.circle")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    Text("Disconnect")
+                        .fontWeight(.semibold)
+                        .font(.title)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding()
+                .foregroundColor(.white)
+                .background(Color.red)
+            }
         }
         
     }
@@ -61,6 +79,6 @@ struct DeviceInfo : View {
 
 struct DeviceInfo_Previews: PreviewProvider {
     static var previews: some View {
-        DeviceInfo(device: Device(name: "GeigerCounter"))
+        DeviceInfo(device: Device(name: "GeigerCounter"), values: DeviceValues(cpm: 0, msvh: 0.0))
     }
 }

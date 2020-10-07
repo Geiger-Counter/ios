@@ -10,6 +10,7 @@
 		A90F409E2520F0400066433E /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F409D2520F0400066433E /* DevicesView.swift */; };
 		A90F40A32520F6EB0066433E /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F40A22520F6EB0066433E /* DeviceList.swift */; };
 		A90F40A82520F9860066433E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A90F40A72520F9860066433E /* .gitignore */; };
+		A96906D7252E12CA00D2EBC3 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96906D6252E12CA00D2EBC3 /* Device.swift */; };
 		A994D48C251A8CFD00F98A7F /* GeigerCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D48B251A8CFD00F98A7F /* GeigerCounterApp.swift */; };
 		A994D490251A8D0000F98A7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A994D48F251A8D0000F98A7F /* Assets.xcassets */; };
 		A994D493251A8D0000F98A7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A994D492251A8D0000F98A7F /* Preview Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		A90F409D2520F0400066433E /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
 		A90F40A22520F6EB0066433E /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
 		A90F40A72520F9860066433E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A96906D6252E12CA00D2EBC3 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		A994D488251A8CFD00F98A7F /* GeigerCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeigerCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A994D48B251A8CFD00F98A7F /* GeigerCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeigerCounterApp.swift; sourceTree = "<group>"; };
 		A994D48F251A8D0000F98A7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				A9EF052D252B718C007C9BC0 /* Fonts */,
 				A994D48B251A8CFD00F98A7F /* GeigerCounterApp.swift */,
 				A90F409D2520F0400066433E /* DevicesView.swift */,
+				A96906D6252E12CA00D2EBC3 /* Device.swift */,
 				A90F40A22520F6EB0066433E /* DeviceList.swift */,
 				A9EF0543252B96F4007C9BC0 /* DeviceHandler.swift */,
 				A9EF0539252B8ACA007C9BC0 /* DeviceInfo.swift */,
@@ -296,6 +299,7 @@
 				A9EF0521252B5431007C9BC0 /* RotatingLogo.swift in Sources */,
 				A9EF053A252B8ACA007C9BC0 /* DeviceInfo.swift in Sources */,
 				A90F409E2520F0400066433E /* DevicesView.swift in Sources */,
+				A96906D7252E12CA00D2EBC3 /* Device.swift in Sources */,
 				A9EF053F252B8EBC007C9BC0 /* BLEHandler.swift in Sources */,
 				A9EF0544252B96F4007C9BC0 /* DeviceHandler.swift in Sources */,
 				A9EF0526252B6DD4007C9BC0 /* SplashView.swift in Sources */,

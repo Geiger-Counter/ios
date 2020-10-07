@@ -41,7 +41,7 @@ struct DeviceList : View {
     
     var body : some View {
         if(ble_handler.connected) {
-            DeviceInfo(device: get_selected_device())
+            DeviceInfo(device: get_selected_device(), values: ble_handler.values)
         } else {
             VStack {
                 RotatingLogo(duration: 8)

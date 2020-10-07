@@ -38,6 +38,7 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     @Published var peripherals : [Device] = []
     @Published var device : CBPeripheral!
     @Published var connected : Bool = false
+    @Published var values : DeviceValues = DeviceValues(cpm: 0, msvh: 0.0)
     
     override init() {
         super.init()
@@ -96,4 +97,57 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         }
     }
     
+    public func peripheral(_ peripheral : CBPeripheral, didDiscoverServices error : Error?) {
+        if let detected_services = peripheral.services {
+            _ = detected_services.map({(service : CBService) in
+                peripheral.discoverCharacteristics(nil, for: service)
+            })
+        }
+    }
+    
+    public func peripheral(_ peripheral : CBPeripheral, didDiscoverCharacteristicsFor service : CBService, error : Error?) {
+        guard let characteristics = service.characteristics else {return}
+        
+        for characteristic in characteristics {
+            peripheral.readValue(for: characteristic)
+            peripheral.setNotifyValue(true, for: characteristic)
+        }
+    }
+
+    public func peripheral(_ peripheral : CBPeripheral, didUpdateValueFor characteristic : CBCharacteristic, error : Error?) {
+        self.read_characteristic(characteristic: characteristic)
+    }
+    
+    func read_characteristic(characteristic : CBCharacteristic) {
+        guard let value = characteristic.value else { return }
+        switch characteristic.uuid.uuidString {
+            case BLEUUID.DATA_CPM_CHAR_UUID.uppercased():
+                values.cpm = dataToInt(value)
+            case BLEUUID.DATA_MSV_CHAR_UUID.uppercased():
+                values.msvh = dataToFloat(value)
+            case BLEUUID.DATA_IMPULSE_CHAR_UUID.uppercased():
+                print("Impulse")
+            default: return
+        }
+    }
+    
+    func dataToInt(_ data : Data?) -> Int {
+      return Int(dataToValue(data))!
+    }
+    
+    func dataToFloat(_ data : Data?) -> Float {
+      return Float(dataToValue(data))!
+    }
+    
+    func dataToValue(_ data : Data?) -> String {
+      var str : String = ""
+      guard let data = data else { return "" }
+      if data.count < 1 {
+        return ""
+      }
+      for i in 0...(data.count-1) {
+        str.append(Character(UnicodeScalar(data[i])))
+      }
+      return str
+    }
 }
