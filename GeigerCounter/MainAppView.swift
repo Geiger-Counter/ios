@@ -31,7 +31,8 @@ struct MainAppView : View {
     
     public var body : some View {
         switch(self.state.view) {
-            case ViewState.SEARCH: return AnyView(SearchView(ble_handler: ble_handler, state: state))
+            case ViewState.SEARCH:
+                return AnyView(SearchView(ble_handler: ble_handler, state: state))
             case ViewState.SHOW:
                 if(ble_handler.connected) {
                     return AnyView(ShowView(ble_handler: ble_handler, state: state))
@@ -40,7 +41,6 @@ struct MainAppView : View {
                 }
             case ViewState.SETTINGS: return AnyView(SettingsView(ble_handler: ble_handler, state: state))
             case ViewState.AI: return AnyView(AIView(ble_handler: ble_handler, state: state))
-            default: return AnyView(Text(""))
         }
         
     }

@@ -16,6 +16,17 @@ struct ShowView : View {
         Animation.linear(duration: 1)
     }
     
+    var color : Color {
+        let msvh = ble_handler.values.msvh
+        if(msvh < 11.0) {
+            return .green
+        } else if (msvh >= 11.0 && msvh < 57) {
+            return .yellow
+        } else {
+            return .red
+        }
+    }
+    
     func show_settings() {
         state.change_state(view: ViewState.SETTINGS)
     }
@@ -25,7 +36,7 @@ struct ShowView : View {
     }
     
     func disconnect() {
-        print("disconnect")
+        ble_handler.disconnect()
     }
     
     var body : some View {
@@ -56,42 +67,60 @@ struct ShowView : View {
             }
             .padding()
             VStack (alignment: .leading) {
-                Text("Device")
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .font(.title)
-                Spacer()
-                    .frame(height: 15)
-                HStack {
-                    Image(systemName: "desktopcomputer")
-                    Text(state.device!.name)
+                Group {
+                    Text("Device")
+                        .fontWeight(.bold)
+                        .font(.title)
                     Spacer()
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(.green)
-                    Text("online")
+                        .frame(height: 15)
+                    HStack {
+                        Image(systemName: "desktopcomputer")
+                        Text(state.device!.name)
+                        Spacer()
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundColor(.green)
+                        Text("online")
+                    }
                 }
                 Spacer()
                     .frame(height: 15)
-                Text("Statistics")
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .font(.title)
+                Group {
+                    Text("Statistics")
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .font(.title)
+                    Spacer()
+                        .frame(height: 15)
+                    HStack {
+                        Image(systemName: "dot.radiowaves.left.and.right")
+                        Text("CPM")
+                        Spacer()
+                        Text(String(ble_handler.values.cpm))
+                        Image(systemName: "circle.fill")
+                            .animation(blink)
+                            .foregroundColor(.red)
+                            .opacity(ble_handler.impulse ? 1 : 0)
+                    }
+                    HStack {
+                        Image(systemName: "dot.radiowaves.right")
+                        Text("µSv/h")
+                        Spacer()
+                        Text(String(format: "%.2f", ble_handler.values.msvh))
+                        Image(systemName: "circle.fill")
+                            .animation(blink)
+                            .foregroundColor(color)
+                    }
+                }
                 Spacer()
                     .frame(height: 15)
-                HStack {
-                    Image(systemName: "dot.radiowaves.left.and.right")
-                    Text("CPM")
-                    Image(systemName: "xmark.circle.fill")
-                        .animation(blink)
-                        .foregroundColor(.red)
-                        .opacity(ble_handler.impulse ? 1 : 0)
+                Group {
+                    Text("Informations")
+                        .fontWeight(.bold)
+                        .font(.title)
                     Spacer()
-                    Text(String(ble_handler.values.cpm))
-                }
-                
-                HStack {
-                    Image(systemName: "dot.radiowaves.right")
-                    Text("mSv/h")
-                    Spacer()
-                    Text(String(format: "%.2f", ble_handler.values.msvh))
+                        .frame(height: 15)
+                    Text("Am I in danger?")
+                        .fontWeight(.bold)
+                    Text("If the dot on µSv/h is green, you're good to go. A critical point is hit at 11 µSv/h and above. Deadly are values over 57 µSv/h.")
                 }
                 Spacer()
             }

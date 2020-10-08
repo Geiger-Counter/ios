@@ -38,6 +38,8 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     @Published var connected : Bool = false
     @Published var values : DeviceValues = get_default_values()
     @Published var impulse : Bool = false
+    @Published var searching : Bool = false
+    var timer = Timer()
     
     override init() {
         super.init()
@@ -46,15 +48,34 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     }
     
     public func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        start()
+        if(central.state == .poweredOn) {
+            start()
+        }
     }
     
-    func start() {
-        centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey: false])
+    func start(first : Bool = true) {
+        if(first) {
+            self.search()
+        }
+        timer.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.search), userInfo: nil, repeats: true)
     }
     
     func stop() {
+        self.searching = false
         self.centralManager.stopScan()
+        timer.invalidate()
+    }
+    
+    @objc
+    func search() {
+        self.searching = true
+        self.peripherals = []
+        centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey: false])
+    }
+    
+    func disconnect() {
+        centralManager.cancelPeripheralConnection(self.device)
     }
     
     public func centralManager(_ central : CBCentralManager, didDiscover peripheral : CBPeripheral, advertisementData: [String: Any], rssi RSSI: NSNumber) {
@@ -71,8 +92,10 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     }
     
     func connect(device : Device) -> Void {
-        self.stop()
+        self.centralManager.stopScan()
+        timer.invalidate()
         self.device = device.peripheral
+        self.peripherals = []
         self.device.delegate = self
         self.centralManager.connect(self.device, options: nil)
     }
@@ -82,6 +105,7 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             if !self.connected {
                 print("Connected to " + (self.device.name ?? ""))
                 self.connected = true
+                self.searching = false
                 peripheral.discoverServices(nil)
             }
         }
@@ -92,6 +116,8 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             if connected {
                 print("Disconnected from " + (self.device.name ?? ""))
                 self.connected = false
+                self.peripherals = []
+                self.start(first: false)
             }
         }
     }
@@ -125,7 +151,6 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             case BLEUUID.DATA_MSV_CHAR_UUID.uppercased():
                 values.msvh = dataToFloat(value)
             case BLEUUID.DATA_IMPULSE_CHAR_UUID.uppercased():
-                print("Impulse")
                 do_blink()
             case BLEUUID.SETTINGS_SSID_CHAR_UUID.uppercased():
                 values.settings.ssid = dataToValue(value)
