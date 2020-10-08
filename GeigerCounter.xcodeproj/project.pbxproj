@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		A90F409E2520F0400066433E /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F409D2520F0400066433E /* DevicesView.swift */; };
-		A90F40A32520F6EB0066433E /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F40A22520F6EB0066433E /* DeviceList.swift */; };
+		A90F40A32520F6EB0066433E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F40A22520F6EB0066433E /* SearchView.swift */; };
 		A90F40A82520F9860066433E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A90F40A72520F9860066433E /* .gitignore */; };
 		A96906D7252E12CA00D2EBC3 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96906D6252E12CA00D2EBC3 /* Device.swift */; };
 		A994D48C251A8CFD00F98A7F /* GeigerCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D48B251A8CFD00F98A7F /* GeigerCounterApp.swift */; };
@@ -16,10 +16,14 @@
 		A994D493251A8D0000F98A7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A994D492251A8D0000F98A7F /* Preview Assets.xcassets */; };
 		A994D49E251A8D0100F98A7F /* GeigerCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D49D251A8D0100F98A7F /* GeigerCounterTests.swift */; };
 		A994D4A9251A8D0100F98A7F /* GeigerCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D4A8251A8D0100F98A7F /* GeigerCounterUITests.swift */; };
+		A9BEA659252F5F3600D950E7 /* CameraView in Frameworks */ = {isa = PBXBuildFile; productRef = A9BEA658252F5F3600D950E7 /* CameraView */; };
+		A9BEA65E252F5F6000D950E7 /* AIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BEA65D252F5F6000D950E7 /* AIView.swift */; };
+		A9BEA663252F604300D950E7 /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BEA662252F604300D950E7 /* MainAppView.swift */; };
+		A9EC9DFA252F700100589A67 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EC9DF9252F700100589A67 /* SettingsView.swift */; };
 		A9EF0521252B5431007C9BC0 /* RotatingLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF0520252B5431007C9BC0 /* RotatingLogo.swift */; };
 		A9EF0526252B6DD4007C9BC0 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF0525252B6DD4007C9BC0 /* SplashView.swift */; };
 		A9EF052F252B71CB007C9BC0 /* kremlin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9EF052E252B71CB007C9BC0 /* kremlin.ttf */; };
-		A9EF053A252B8ACA007C9BC0 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF0539252B8ACA007C9BC0 /* DeviceInfo.swift */; };
+		A9EF053A252B8ACA007C9BC0 /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF0539252B8ACA007C9BC0 /* ShowView.swift */; };
 		A9EF053F252B8EBC007C9BC0 /* BLEHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF053E252B8EBC007C9BC0 /* BLEHandler.swift */; };
 		A9EF0544252B96F4007C9BC0 /* DeviceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF0543252B96F4007C9BC0 /* DeviceHandler.swift */; };
 /* End PBXBuildFile section */
@@ -43,7 +47,7 @@
 
 /* Begin PBXFileReference section */
 		A90F409D2520F0400066433E /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
-		A90F40A22520F6EB0066433E /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
+		A90F40A22520F6EB0066433E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		A90F40A72520F9860066433E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A96906D6252E12CA00D2EBC3 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		A994D488251A8CFD00F98A7F /* GeigerCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeigerCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,10 +61,13 @@
 		A994D4A4251A8D0100F98A7F /* GeigerCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeigerCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A994D4A8251A8D0100F98A7F /* GeigerCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeigerCounterUITests.swift; sourceTree = "<group>"; };
 		A994D4AA251A8D0100F98A7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9BEA65D252F5F6000D950E7 /* AIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIView.swift; sourceTree = "<group>"; };
+		A9BEA662252F604300D950E7 /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
+		A9EC9DF9252F700100589A67 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A9EF0520252B5431007C9BC0 /* RotatingLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingLogo.swift; sourceTree = "<group>"; };
 		A9EF0525252B6DD4007C9BC0 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		A9EF052E252B71CB007C9BC0 /* kremlin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kremlin.ttf; sourceTree = "<group>"; };
-		A9EF0539252B8ACA007C9BC0 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		A9EF0539252B8ACA007C9BC0 /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
 		A9EF053E252B8EBC007C9BC0 /* BLEHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEHandler.swift; sourceTree = "<group>"; };
 		A9EF0543252B96F4007C9BC0 /* DeviceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9BEA659252F5F3600D950E7 /* CameraView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,12 +126,15 @@
 				A994D48B251A8CFD00F98A7F /* GeigerCounterApp.swift */,
 				A90F409D2520F0400066433E /* DevicesView.swift */,
 				A96906D6252E12CA00D2EBC3 /* Device.swift */,
-				A90F40A22520F6EB0066433E /* DeviceList.swift */,
+				A90F40A22520F6EB0066433E /* SearchView.swift */,
 				A9EF0543252B96F4007C9BC0 /* DeviceHandler.swift */,
-				A9EF0539252B8ACA007C9BC0 /* DeviceInfo.swift */,
+				A9EF0539252B8ACA007C9BC0 /* ShowView.swift */,
+				A9BEA662252F604300D950E7 /* MainAppView.swift */,
+				A9EC9DF9252F700100589A67 /* SettingsView.swift */,
 				A9EF0520252B5431007C9BC0 /* RotatingLogo.swift */,
 				A9EF0525252B6DD4007C9BC0 /* SplashView.swift */,
 				A9EF053E252B8EBC007C9BC0 /* BLEHandler.swift */,
+				A9BEA65D252F5F6000D950E7 /* AIView.swift */,
 				A994D48F251A8D0000F98A7F /* Assets.xcassets */,
 				A994D494251A8D0000F98A7F /* Info.plist */,
 				A994D491251A8D0000F98A7F /* Preview Content */,
@@ -181,6 +192,9 @@
 			dependencies = (
 			);
 			name = GeigerCounter;
+			packageProductDependencies = (
+				A9BEA658252F5F3600D950E7 /* CameraView */,
+			);
 			productName = GeigerCounter;
 			productReference = A994D488251A8CFD00F98A7F /* GeigerCounter.app */;
 			productType = "com.apple.product-type.application";
@@ -252,6 +266,9 @@
 				Base,
 			);
 			mainGroup = A994D47F251A8CFD00F98A7F;
+			packageReferences = (
+				A9BEA657252F5F3600D950E7 /* XCRemoteSwiftPackageReference "CameraView" */,
+			);
 			productRefGroup = A994D489251A8CFD00F98A7F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -297,14 +314,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9EF0521252B5431007C9BC0 /* RotatingLogo.swift in Sources */,
-				A9EF053A252B8ACA007C9BC0 /* DeviceInfo.swift in Sources */,
+				A9EF053A252B8ACA007C9BC0 /* ShowView.swift in Sources */,
+				A9BEA65E252F5F6000D950E7 /* AIView.swift in Sources */,
 				A90F409E2520F0400066433E /* DevicesView.swift in Sources */,
 				A96906D7252E12CA00D2EBC3 /* Device.swift in Sources */,
+				A9BEA663252F604300D950E7 /* MainAppView.swift in Sources */,
 				A9EF053F252B8EBC007C9BC0 /* BLEHandler.swift in Sources */,
 				A9EF0544252B96F4007C9BC0 /* DeviceHandler.swift in Sources */,
 				A9EF0526252B6DD4007C9BC0 /* SplashView.swift in Sources */,
+				A9EC9DFA252F700100589A67 /* SettingsView.swift in Sources */,
 				A994D48C251A8CFD00F98A7F /* GeigerCounterApp.swift in Sources */,
-				A90F40A32520F6EB0066433E /* DeviceList.swift in Sources */,
+				A90F40A32520F6EB0066433E /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +644,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A9BEA657252F5F3600D950E7 /* XCRemoteSwiftPackageReference "CameraView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/brettfazio/CameraView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A9BEA658252F5F3600D950E7 /* CameraView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A9BEA657252F5F3600D950E7 /* XCRemoteSwiftPackageReference "CameraView" */;
+			productName = CameraView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A994D480251A8CFD00F98A7F /* Project object */;
 }

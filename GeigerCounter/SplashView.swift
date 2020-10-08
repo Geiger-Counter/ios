@@ -14,7 +14,7 @@ struct SplashView : View {
     var body : some View {
         VStack {
             if self.active {
-                DeviceList()
+                MainAppView()
             } else {
                 Image("Radioactivity")
                     .resizable()

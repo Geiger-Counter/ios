@@ -1,21 +1,23 @@
 //
-//  DeviceList.swift
+//  SearchView.swift
 //  GeigerCounter
 //
 //  Created by Marco Combosch on 27.09.20.
 //
 
-import Foundation
 import SwiftUI
 import CoreBluetooth
 
-struct DeviceList : View {
+struct SearchView : View {
     
-    @ObservedObject var ble_handler = BLEHandler()
+    @ObservedObject var ble_handler : BLEHandler
     @State private var selected_device : String = ""
+    @ObservedObject var state : MainState
     
     func connect() {
-        ble_handler.connect(device: get_selected_device())
+        let device : Device = get_selected_device()
+        ble_handler.connect(device: device)
+        state.change_state(view: ViewState.SHOW, device : device)
     }
     
     func select(device : Device) -> () -> () {
@@ -40,10 +42,7 @@ struct DeviceList : View {
     }
     
     var body : some View {
-        if(ble_handler.connected) {
-            DeviceInfo(device: get_selected_device(), values: ble_handler.values, blinking: ble_handler.impulse)
-        } else {
-            VStack {
+        VStack {
                 RotatingLogo(duration: 8)
                 Text("Available Devices")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -75,12 +74,5 @@ struct DeviceList : View {
             }
             .frame(minWidth: 0, maxWidth: .infinity)
         }
-    }
     
-}
-
-struct DeviceList_Previews: PreviewProvider {
-    static var previews: some View {
-        DeviceList()
-    }
 }

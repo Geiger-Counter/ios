@@ -7,22 +7,21 @@
 
 import SwiftUI
 
-struct DeviceInfo : View {
+struct ShowView : View {
     
-    var device : Device
-    var values : DeviceValues
-    var blinking : Bool
+    @ObservedObject var ble_handler : BLEHandler
+    @ObservedObject var state : MainState
     
     var blink : Animation {
         Animation.linear(duration: 1)
     }
     
     func show_settings() {
-        
+        state.change_state(view: ViewState.SETTINGS)
     }
     
     func show_camera() {
-        
+        state.change_state(view: ViewState.AI)
     }
     
     func disconnect() {
@@ -64,7 +63,7 @@ struct DeviceInfo : View {
                     .frame(height: 15)
                 HStack {
                     Image(systemName: "desktopcomputer")
-                    Text(device.name)
+                    Text(state.device!.name)
                     Spacer()
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundColor(.green)
@@ -83,16 +82,16 @@ struct DeviceInfo : View {
                     Image(systemName: "xmark.circle.fill")
                         .animation(blink)
                         .foregroundColor(.red)
-                        .opacity(blinking ? 1 : 0)
+                        .opacity(ble_handler.impulse ? 1 : 0)
                     Spacer()
-                    Text(String(values.cpm))
+                    Text(String(ble_handler.values.cpm))
                 }
                 
                 HStack {
                     Image(systemName: "dot.radiowaves.right")
                     Text("mSv/h")
                     Spacer()
-                    Text(String(format: "%.2f", values.msvh))
+                    Text(String(format: "%.2f", ble_handler.values.msvh))
                 }
                 Spacer()
             }
@@ -115,10 +114,4 @@ struct DeviceInfo : View {
         
     }
     
-}
-
-struct DeviceInfo_Previews: PreviewProvider {
-    static var previews: some View {
-        DeviceInfo(device: Device(name: "GeigerCounter"), values: DeviceValues(cpm: 0, msvh: 0.0), blinking: false)
-    }
 }

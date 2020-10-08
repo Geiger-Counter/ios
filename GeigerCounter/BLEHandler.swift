@@ -36,7 +36,7 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     @Published var peripherals : [Device] = []
     @Published var device : CBPeripheral!
     @Published var connected : Bool = false
-    @Published var values : DeviceValues = DeviceValues(cpm: 0, msvh: 0.0)
+    @Published var values : DeviceValues = get_default_values()
     @Published var impulse : Bool = false
     
     override init() {
@@ -127,6 +127,16 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             case BLEUUID.DATA_IMPULSE_CHAR_UUID.uppercased():
                 print("Impulse")
                 do_blink()
+            case BLEUUID.SETTINGS_SSID_CHAR_UUID.uppercased():
+                values.settings.ssid = dataToValue(value)
+            case BLEUUID.SETTINGS_PASSWORD_CHAR_UUID.uppercased():
+                values.settings.password = dataToValue(value)
+            case BLEUUID.SETTINGS_ENDPOINT_CHAR_UUID.uppercased():
+                values.settings.endpoint = dataToValue(value)
+            case BLEUUID.SETTINGS_USERNAME_CHAR_UUID.uppercased():
+                values.settings.username = dataToValue(value)
+            case BLEUUID.SETTINGS_TOKEN_CHAR_UUID.uppercased():
+                values.settings.username = dataToValue(value)
             default: return
         }
     }

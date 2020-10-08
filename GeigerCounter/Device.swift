@@ -31,7 +31,26 @@ struct Device : Hashable {
     }
 }
 
+struct DeviceSettings {
+    var ssid : String
+    var password : String
+    var endpoint : String
+    var username : String
+    var token : String
+}
+
 struct DeviceValues {
     var cpm : Int
     var msvh : Float
+    var settings : DeviceSettings
+}
+
+func get_default_values() -> DeviceValues {
+    return DeviceValues(cpm: 0, msvh: 0.0, settings: DeviceSettings(
+                            ssid: "",
+                            password: "",
+                            endpoint: "",
+                            username: "",
+                            token: ""
+    ))
 }
