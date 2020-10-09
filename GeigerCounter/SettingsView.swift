@@ -18,6 +18,18 @@ struct SettingsView : View {
     @State var api_username : String = ""
     @State var api_password : String = ""
     @State var api_token : String = ""
+    @State var auditive : Bool = false
+    
+    init(ble_handler : BLEHandler, state : MainState) {
+        self.ble_handler = ble_handler
+        self.state = state
+        self.ssid = ble_handler.values.settings.ssid
+        self.password = ble_handler.values.settings.password
+        self.api_endpoint = ble_handler.values.settings.endpoint
+        self.api_username = ble_handler.values.settings.username
+        self.api_token = ble_handler.values.settings.token
+        self.auditive = ble_handler.values.settings.auditive
+    }
     
     func back() {
         state.change_state(view: ViewState.SHOW)
@@ -56,6 +68,14 @@ struct SettingsView : View {
                     }
                     Section(header: Text("API")) {
                         TextField("Endpoint", text: $api_endpoint)
+                        TextField("Username", text: $api_username)
+                        TextField("Password", text: $api_password)
+                        TextField("Token", text: $api_token)
+                    }
+                    Section(header: Text("Device")) {
+                        Toggle(isOn: $auditive) {
+                            Text("Radiation Signal")
+                        }
                     }
                 }
                 .navigationBarTitle("Settings")
@@ -64,7 +84,6 @@ struct SettingsView : View {
             Button(action: save){
                 HStack{
                     Image(systemName: "square.and.arrow.down")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     Text("Save")
                         .fontWeight(.semibold)
                         .font(.title)

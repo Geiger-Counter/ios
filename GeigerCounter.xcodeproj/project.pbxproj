@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A90001792530E36900166647 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90001782530E36900166647 /* ARViewController.swift */; };
+		A900017E2530E64200166647 /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A900017D2530E64200166647 /* ARView.swift */; };
 		A90F409E2520F0400066433E /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F409D2520F0400066433E /* DevicesView.swift */; };
 		A90F40A32520F6EB0066433E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F40A22520F6EB0066433E /* SearchView.swift */; };
 		A90F40A82520F9860066433E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A90F40A72520F9860066433E /* .gitignore */; };
@@ -17,7 +19,6 @@
 		A994D49E251A8D0100F98A7F /* GeigerCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D49D251A8D0100F98A7F /* GeigerCounterTests.swift */; };
 		A994D4A9251A8D0100F98A7F /* GeigerCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994D4A8251A8D0100F98A7F /* GeigerCounterUITests.swift */; };
 		A9BEA659252F5F3600D950E7 /* CameraView in Frameworks */ = {isa = PBXBuildFile; productRef = A9BEA658252F5F3600D950E7 /* CameraView */; };
-		A9BEA65E252F5F6000D950E7 /* AIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BEA65D252F5F6000D950E7 /* AIView.swift */; };
 		A9BEA663252F604300D950E7 /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BEA662252F604300D950E7 /* MainAppView.swift */; };
 		A9EC9DFA252F700100589A67 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EC9DF9252F700100589A67 /* SettingsView.swift */; };
 		A9EF0521252B5431007C9BC0 /* RotatingLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF0520252B5431007C9BC0 /* RotatingLogo.swift */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A90001782530E36900166647 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		A900017D2530E64200166647 /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
 		A90F409D2520F0400066433E /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
 		A90F40A22520F6EB0066433E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		A90F40A72520F9860066433E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -61,7 +64,6 @@
 		A994D4A4251A8D0100F98A7F /* GeigerCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeigerCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A994D4A8251A8D0100F98A7F /* GeigerCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeigerCounterUITests.swift; sourceTree = "<group>"; };
 		A994D4AA251A8D0100F98A7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9BEA65D252F5F6000D950E7 /* AIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIView.swift; sourceTree = "<group>"; };
 		A9BEA662252F604300D950E7 /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
 		A9EC9DF9252F700100589A67 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A9EF0520252B5431007C9BC0 /* RotatingLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingLogo.swift; sourceTree = "<group>"; };
@@ -131,10 +133,11 @@
 				A9EF0539252B8ACA007C9BC0 /* ShowView.swift */,
 				A9BEA662252F604300D950E7 /* MainAppView.swift */,
 				A9EC9DF9252F700100589A67 /* SettingsView.swift */,
+				A90001782530E36900166647 /* ARViewController.swift */,
+				A900017D2530E64200166647 /* ARView.swift */,
 				A9EF0520252B5431007C9BC0 /* RotatingLogo.swift */,
 				A9EF0525252B6DD4007C9BC0 /* SplashView.swift */,
 				A9EF053E252B8EBC007C9BC0 /* BLEHandler.swift */,
-				A9BEA65D252F5F6000D950E7 /* AIView.swift */,
 				A994D48F251A8D0000F98A7F /* Assets.xcassets */,
 				A994D494251A8D0000F98A7F /* Info.plist */,
 				A994D491251A8D0000F98A7F /* Preview Content */,
@@ -314,11 +317,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9EF0521252B5431007C9BC0 /* RotatingLogo.swift in Sources */,
+				A900017E2530E64200166647 /* ARView.swift in Sources */,
 				A9EF053A252B8ACA007C9BC0 /* ShowView.swift in Sources */,
-				A9BEA65E252F5F6000D950E7 /* AIView.swift in Sources */,
 				A90F409E2520F0400066433E /* DevicesView.swift in Sources */,
 				A96906D7252E12CA00D2EBC3 /* Device.swift in Sources */,
 				A9BEA663252F604300D950E7 /* MainAppView.swift in Sources */,
+				A90001792530E36900166647 /* ARViewController.swift in Sources */,
 				A9EF053F252B8EBC007C9BC0 /* BLEHandler.swift in Sources */,
 				A9EF0544252B96F4007C9BC0 /* DeviceHandler.swift in Sources */,
 				A9EF0526252B6DD4007C9BC0 /* SplashView.swift in Sources */,

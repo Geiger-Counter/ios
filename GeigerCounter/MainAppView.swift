@@ -40,7 +40,7 @@ struct MainAppView : View {
                     return AnyView(SearchView(ble_handler: ble_handler, state: state))
                 }
             case ViewState.SETTINGS: return AnyView(SettingsView(ble_handler: ble_handler, state: state))
-            case ViewState.AI: return AnyView(AIView(ble_handler: ble_handler, state: state))
+            case ViewState.AI: return AnyView(ARView(ble_handler: ble_handler, state: state))
         }
         
     }

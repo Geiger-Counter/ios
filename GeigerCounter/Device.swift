@@ -37,6 +37,7 @@ struct DeviceSettings {
     var endpoint : String
     var username : String
     var token : String
+    var auditive : Bool
 }
 
 struct DeviceValues {
@@ -51,6 +52,7 @@ func get_default_values() -> DeviceValues {
                             password: "",
                             endpoint: "",
                             username: "",
-                            token: ""
+                            token: "",
+                            auditive: false
     ))
 }

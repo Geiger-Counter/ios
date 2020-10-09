@@ -7,6 +7,21 @@
 
 import SwiftUI
 
+struct NavigationIndicator : UIViewControllerRepresentable {
+    
+    @ObservedObject var ble_handler : BLEHandler
+    @ObservedObject var state : MainState
+    
+    typealias UIViewControllerType = ARViewController
+    
+    func makeUIViewController(context: Context) -> ARViewController {
+        return ARViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: ARViewController, context: UIViewControllerRepresentableContext<NavigationIndicator>) {}
+    
+}
+
 struct ShowView : View {
     
     @ObservedObject var ble_handler : BLEHandler

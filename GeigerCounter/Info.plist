@@ -47,6 +47,8 @@
 	</array>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>BLE data is used to communicate with GeigerCounter Controller</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera is used for visualize radiation data</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
