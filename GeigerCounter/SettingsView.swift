@@ -36,6 +36,11 @@ struct SettingsView : View {
     }
     
     func save() {
+        let settings = DeviceSettings(ssid: ssid, password: password, endpoint: api_endpoint, username: api_username, token: api_token, auditive: auditive)
+        ble_handler.values.settings = settings
+        do {
+            try ble_handler.save_settings()
+        } catch {}
         state.change_state(view: ViewState.SHOW)
     }
     
