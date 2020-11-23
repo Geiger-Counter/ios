@@ -10,25 +10,12 @@ import CoreBluetooth
 
 struct BLEUUID {
     static let DATA_SERVICE_UUID : String = "02ed48d7-69b1-4603-9899-a05aa175f9d6"
-    static let SETTINGS_SERVICE_UUID : String = "647ac72a-0b70-430b-914b-f0436652e356"
     static let DATA_MSV_CHAR_UUID : String = "caf31b35-b140-489f-b875-36893157d6cf"
     static let DATA_MSV_DESC_UUID : String = "3065e35b-5433-44cb-96f4-215887e225a3"
     static let DATA_CPM_CHAR_UUID : String = "a4596a0a-a378-49e4-9256-1abfe5784fbd"
     static let DATA_CPM_DEC_UUID : String = "5b4e4513-2aa3-4180-b155-c1e3a720a756"
     static let DATA_IMPULSE_CHAR_UUID : String = "91784055-76be-4865-af66-1eeb4a6fac23"
     static let DATA_IMPULSE_DEC_UUID : String = "1044196e-5e89-4a4b-89d1-8c241cbf6b8d"
-    static let SETTINGS_SSID_CHAR_UUID : String = "8526a1b5-329c-4e09-8892-a362c4f7d174"
-    static let SETTINGS_SSID_DEC_UUID : String = "d2b60679-7a12-4897-acf6-91975cf39721"
-    static let SETTINGS_PASSWORD_CHAR_UUID : String = "61e5e86c-1812-4025-af0d-6575b3eebd44"
-    static let SETTINGS_PASSWORD_DEC_UUID : String = "1f86e908-3b3f-4c9f-9cb4-70a7cd282c9e"
-    static let SETTINGS_ENDPOINT_CHAR_UUID : String = "1f732276-49c6-4637-b12d-d3bff3249dcc"
-    static let SETTINGS_ENDPOINT_DEC_UUID : String = "a375f2fa-d3f2-4231-913b-dd0c8960efe1"
-    static let SETTINGS_USERNAME_CHAR_UUID : String = "27929fb9-4b99-4542-a052-d7fcea739e56"
-    static let SETTINGS_USERNAME_DEC_UUID : String = "83b6563d-ea8f-4018-b9ba-a12c30137b8f"
-    static let SETTINGS_TOKEN_CHAR_UUID : String = "15dfd818-f717-45bc-9e96-b1cdacd873ee"
-    static let SETTINGS_TOKEN_DEC_UUID : String = "77a5a470-632a-4e81-87cd-e356b5844351"
-    static let SETTINGS_AUDITIVE_DEC_UUID : String = "9cc8f975-e574-4a6c-9954-a3119f002b75"
-    static let SETTINGS_AUDITIVE_CHAR_UUID : String = "d0a31711-fab8-4ae7-9d48-54b3a34b1e28"
 }
 
 open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate, ObservableObject
@@ -42,13 +29,6 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     @Published var impulse : Bool = false
     @Published var searching : Bool = false
     var timer = Timer()
-    
-    var ssid_char : CBCharacteristic? = nil
-    var pw_char : CBCharacteristic? = nil
-    var endpoint_char : CBCharacteristic? = nil
-    var username_char : CBCharacteristic? = nil
-    var token_char : CBCharacteristic? = nil
-    var auditive_char : CBCharacteristic? = nil
     
     override init() {
         super.init()
@@ -163,24 +143,6 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
                 values.msvh = dataToFloat(value)
             case BLEUUID.DATA_IMPULSE_CHAR_UUID.uppercased():
                 do_blink()
-            case BLEUUID.SETTINGS_SSID_CHAR_UUID.uppercased():
-                ssid_char = characteristic
-                values.settings.ssid = dataToValue(value)
-            case BLEUUID.SETTINGS_PASSWORD_CHAR_UUID.uppercased():
-                pw_char = characteristic
-                values.settings.password = dataToValue(value)
-            case BLEUUID.SETTINGS_ENDPOINT_CHAR_UUID.uppercased():
-                endpoint_char = characteristic
-                values.settings.endpoint = dataToValue(value)
-            case BLEUUID.SETTINGS_USERNAME_CHAR_UUID.uppercased():
-                username_char = characteristic
-                values.settings.username = dataToValue(value)
-            case BLEUUID.SETTINGS_TOKEN_CHAR_UUID.uppercased():
-                token_char = characteristic
-                values.settings.username = dataToValue(value)
-            case BLEUUID.SETTINGS_AUDITIVE_CHAR_UUID.uppercased():
-                auditive_char = characteristic
-                values.settings.auditive = dataToBool(value)
             default: return
         }
     }
@@ -218,29 +180,5 @@ open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             self.impulse = false
         }
-    }
-    
-    func save_settings() throws {
-    
-        let settings = self.values.settings
-        if(ssid_char != nil) {
-            self.device.writeValue(valueToData(str: settings.ssid), for: ssid_char!, type: .withoutResponse)
-        }
-        if(pw_char != nil) {
-            self.device.writeValue(valueToData(str: settings.password), for: pw_char!, type: .withoutResponse)
-        }
-        if(username_char != nil) {
-            self.device.writeValue(valueToData(str: settings.username), for: username_char!, type: .withoutResponse)
-        }
-        if(token_char != nil) {
-            self.device.writeValue(valueToData(str: settings.token), for: token_char!, type: .withoutResponse)
-        }
-        if(endpoint_char != nil) {
-            self.device.writeValue(valueToData(str: settings.endpoint), for: endpoint_char!, type: .withoutResponse)
-        }
-        if(auditive_char != nil) {
-            self.device.writeValue(valueToData(str: settings.auditive ? "true" : "false"), for: auditive_char!, type: .withoutResponse)
-        }
-        
     }
 }

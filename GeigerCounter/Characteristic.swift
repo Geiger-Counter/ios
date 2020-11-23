@@ -14,6 +14,4 @@ struct Characteristic<T> {
     var DESC : String
     var handler : CBCharacteristic? = nil
     
-    
-    
 }
