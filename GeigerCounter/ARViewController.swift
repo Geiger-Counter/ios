@@ -7,6 +7,7 @@
 
 import Foundation
 import ARKit
+import SpriteKit
 import SwiftUI
 
 struct ARViewIndicator : UIViewControllerRepresentable {
@@ -20,8 +21,8 @@ struct ARViewIndicator : UIViewControllerRepresentable {
 }
 
 class ARViewController : UIViewController, ARSCNViewDelegate {
-    
-    var arView : ARSCNView {
+   
+    var sceneView : ARSCNView {
         return self.view as! ARSCNView
     }
     
@@ -31,8 +32,9 @@ class ARViewController : UIViewController, ARSCNViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        arView.delegate = self
-        arView.scene = SCNScene()
+        sceneView.delegate = self
+        sceneView.scene = SCNScene(named: "Particles.scn")!
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,13 +48,30 @@ class ARViewController : UIViewController, ARSCNViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let configuration = ARWorldTrackingConfiguration()
-        arView.session.run(configuration)
-        arView.delegate = self
+        sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        arView.session.pause()
+        sceneView.session.pause()
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        DispatchQueue.main.async {
+            guard let pointOfView = self.sceneView.pointOfView else { return }
+            let transform = pointOfView.transform
+            let orientation = SCNVector3(-transform.m31, -transform.m32, -transform.m33)
+            let location = SCNVector3(transform.m41, transform.m42, transform.m43)
+            let pos = SCNVector3(orientation.x + location.x, orientation.y + location.y, orientation.z + location.z)
+            
+            guard let particles = self.sceneView.scene.rootNode.childNode(withName: "particles", recursively: true) else { return }
+            
+            particles.position = pos
+            
+            guard let systems = particles.particleSystems else { return }
+            let sys : SCNParticleSystem = systems[0]
+            sys.birthRate = 5
+        }
     }
     
     func sessionWasInterrupted(_ session: ARSession) {}
@@ -62,5 +81,5 @@ class ARViewController : UIViewController, ARSCNViewDelegate {
     func session(_ session : ARSession, didFailWithError error : Error) {}
     
     func session(_ session: ARSession, cameraDidChangeTrachingState camera : ARCamera) {}
-    
+
 }

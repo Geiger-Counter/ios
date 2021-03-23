@@ -42,12 +42,12 @@ struct ShowView : View {
         }
     }
     
-    func show_settings() {
-        state.change_state(view: ViewState.SETTINGS)
+    func show_info() {
+        state.change_state(view: ViewState.INFO)
     }
     
     func show_camera() {
-        state.change_state(view: ViewState.AI)
+        state.change_state(view: ViewState.AR)
     }
     
     func disconnect() {
@@ -58,8 +58,8 @@ struct ShowView : View {
         
         VStack {
             HStack {
-                Button(action: show_settings) {
-                    Image(systemName: "gear")
+                Button(action: show_info) {
+                    Image(systemName: "info.circle.fill")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 30)

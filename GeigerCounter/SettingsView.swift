@@ -24,13 +24,6 @@ struct SettingsView : View {
     var body : some View {
         VStack {
             HStack {
-                Button(action: back) {
-                    Image(systemName: "arrow.left.circle")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 30)
-                }
-                Spacer()
                 VStack {
                     Image("Radioactivity")
                         .resizable()
@@ -41,7 +34,19 @@ struct SettingsView : View {
                 Spacer()
                 Text("")
             }
-            .padding()
+            Spacer()
+            Button(action: back) {
+                HStack {
+                    Image(systemName: "arrow.left.circle")
+                    Text("Back")
+                        .fontWeight(.semibold)
+                        .font(.title)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding()
+                .foregroundColor(.white)
+                .background(Color.blue)
+            }
         }
     }
     

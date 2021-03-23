@@ -16,6 +16,8 @@ struct BLEUUID {
     static let DATA_CPM_DEC_UUID : String = "5b4e4513-2aa3-4180-b155-c1e3a720a756"
     static let DATA_IMPULSE_CHAR_UUID : String = "91784055-76be-4865-af66-1eeb4a6fac23"
     static let DATA_IMPULSE_DEC_UUID : String = "1044196e-5e89-4a4b-89d1-8c241cbf6b8d"
+    static let DATA_SIGNAL_CHAR_UUID : String = "72333e06-945d-4d1d-8a02-9679244e3304"
+    static let DATA_SIGNAL_DEC_UUID : String = "7a22ca98-9875-485e-b9cf-2bf4ddd15924"
 }
 
 open class BLEHandler : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate, ObservableObject
